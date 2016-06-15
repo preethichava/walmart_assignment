@@ -34,7 +34,7 @@ public class JsonParser {
 		return sb.toString();
 	}
 
-	public static JSONObject readJsonFromUrl(String url) throws IOException {
+	public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
 		InputStream is = new URL(url).openStream();
 		try {
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -108,7 +108,7 @@ public class JsonParser {
 
 	}
 
-	public static long getpidSearch(String url) throws IOException {
+	public static long getpidSearch(String url) throws IOException, JSONException {
 		// getting item id of the 1st product obtained in search
 		long id;
 		String pidname1;
@@ -165,7 +165,7 @@ public class JsonParser {
 
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, JSONException {
 		String pidname[] = new String[10];
 		Product product = new Product();
 
